@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+
+	<title>Subtitle Parser| Home</title>
+	
+	<meta name="author" content=""/>
+	<meta name="date" content="Summer 2018"/>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<style>
+		.article{
+			font-size: 14pt;
+			padding-bottom: 40px;
+			line-height: 40px;
+		}
+	</style>
+			
+</head>
+
+<body>
+	<div class="container text-center">
+		<h1 id="header">&nbsp;</h1>
+		<h2>Auto-Generated Subtitles Parser</h2>
+	</div>
+	
+	<div class="container article" id="article"></div>
+
+<script>
+	$(document).ready(function(){
+		$.ajax({
+			type: "GET",
+			//Enter timedtext url here between the quotation marks
+			url:"",
+			dataType: "xml",
+			success: function (data) {
+				var markup = data;
+				$(data).find('s').each(function(){
+					var word= $(this).val('ac').text();
+					$('#article').append(word+'&nbsp;');
+				})
+			},
+			error: function (errorMessage) {
+				console.log(errorMessage);
+				alert("Request Failed. Verify the Correct URL Has Been Entered");
+			}
+		});
+	});
+</script>
+
+</body>
+
+</html>	
