@@ -13,3 +13,7 @@ This program allows a user to display auto-generated subtitles from a Youtube vi
 6. Copy the entire URL of this new page and paste this into the index.html file you previously opened in your editor.
    - The location where you place this link has been clearly marked with comments in the index.html program.
 7. Save and run index.html in your web-browser.
+
+## Notes
+
+- This program requires a stable internet connection when running it.
