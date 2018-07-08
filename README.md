@@ -17,3 +17,4 @@ This program allows a user to display auto-generated subtitles from a Youtube vi
 ## Notes
 
 - This program requires a stable internet connection when running it.
+- This program will only work with automatically generated Youtube comments.
